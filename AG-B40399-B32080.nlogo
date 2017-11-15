@@ -24,7 +24,7 @@ to setup
   reset-ticks
 end
 to log_
-  file-open "log_netlogo.txt"
+  file-open (word "log_netlogo" CROSSOVER-RATE MUTATION-RATE ".txt")
   file-write [fitness] of winner
   file-write diversity
   file-write "\n"
