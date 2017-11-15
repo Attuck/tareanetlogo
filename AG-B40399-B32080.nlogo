@@ -23,15 +23,13 @@ to setup
   update-display
   reset-ticks
 end
-
 to log_
   file-open "log_netlogo.txt"
-  ask turtles
-  [file-write bits
-    file-write fitness]
+  file-write [fitness] of winner
+  file-write diversity
   file-write "\n"
-  file-close
 end
+
 to go
   if [fitness] of winner = world-width
     [ stop ]
