@@ -25,7 +25,7 @@ to setup
   reset-ticks
 end
 to log_
-  file-open "log_netlogo.txt"
+
   file-write [fitness] of winner
   file-write diversity
   file-type "\n"
@@ -468,20 +468,6 @@ El switch PLOT-DIVERSIDAD?  controla si la cantidad de diversidad dentro de la p
 
 El "Gráfico de condición física" se utiliza para mostrar los mejores, medios y peores valores de condición física de las soluciones en cada generación.
 
-## THINGS TO NOTICE
-
-Step through the model slowly, and look at the visual representation of the best solution found in each generation, displayed in the VIEW.  How often does the best solution in Generation X+1 appear to be the offspring of the best solution in Generation X?
-
-As the fitness in the population increases, the diversity decreases.  Why is this?
-
-## THINGS TO TRY
-
-Explore the effects of larger or smaller population sizes on the number of generations it takes to solve the problem completely.  What happens if you measure the amount of time (in seconds) that it takes to solve the problem completely?
-
-How does asexual reproduction compare to sexual reproduction for solving this problem?  (What if CLONING-RATE is 100, or CLONING-RATE is 0?)
-
-How much mutation is beneficial for the genetic algorithm?  Can the genetic algorithm find a perfect solution if there is MUTATION-RATE is 0?  What about if MUTATION-RATE is 10.0?  Can you find an optimal MUTATION-RATE?
-
 ## ¿Cómo extender el modelo?
 
 Existen muchas variaciones en este algoritmo genético simple. Por ejemplo, algunos algoritmos genéticos incluyen "elitismo". En este caso, el mejor X% de soluciones de la generación anterior siempre se copia directamente en la nueva generación. Modifique este modelo para que use elitismo.
@@ -493,14 +479,12 @@ Como se señaló anteriormente, el problema "TODAS LAS UNIDAS" es un problema de
 
 ## Créditos y referencias
 
-Este modelo se basa en el trabajo de * Stonedahl, F. y Wilensky, U., que se basó en John H. Holland, que es ampliamente considerado como el padre de los algoritmos genéticos. Véase el libro de Holland "Adaptación en sistemas naturales y artificiales", 1992, MIT Press.
+Este modelo se basa en el trabajo de  Stonedahl, F. y Wilensky, U., que se basó en John H. Holland, que es ampliamente considerado como el padre de los algoritmos genéticos. Véase el libro de Holland "Adaptación en sistemas naturales y artificiales", 1992, MIT Press.
 
 Ver cita:
 Stonedahl, F. and Wilensky, U. (2008).  NetLogo Simple Genetic Algorithm model.  http://ccl.northwestern.edu/netlogo/models/SimpleGeneticAlgorithm.  Center for Connected Learning and Computer-Based Modeling, Northwestern University, Evanston, IL
 
-Additional information about genetic algorithms is available from a plethora of sources online.
-
-## Cómo citar
+## ¿Cómo citar?
 
 Si cita este modelo o el software NetLogo en una publicación, le pedimos que incluya las citas a continuación.
 
@@ -509,11 +493,9 @@ Para el modelo en sí:
 * Apu, R. y Oscar, C. (2017). Modelo de Algoritmo Genético Simple de NetLogo adaptado. hhttps: //github.com/Attuck/tareanetlogo. Escuela de Ciencias de Computación e Informática, Universidad de Costa Rica, San José, Costa Rica.
 
 
-
 Por favor, cite el software NetLogo como:
 
 * Wilensky, U. (1999). NetLogo. http://ccl.northwestern.edu/netlogo/. Centro de aprendizaje conectado y modelado basado en computadora, Northwestern University, Evanston, IL.
-
 
 @#$#@#$#@
 default
