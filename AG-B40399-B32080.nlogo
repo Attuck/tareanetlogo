@@ -20,12 +20,12 @@ to setup
     [calculate-fitness-2]
     hide-turtle  ;; the turtles' locations are not used, so hide them
   ]
-  file-delete "log_netlogo.txt"
+  ;;file-delete "log_netlogo.txt"
   update-display
   reset-ticks
 end
 to log_
-  file-open "log_netlogo.txt"
+  file-open (word "log_netlogo" CROSSOVER-RATE MUTATION-RATE ".txt")
   file-write [fitness] of winner
   file-write diversity
   file-type "\n"
@@ -330,8 +330,8 @@ mutation-rate
 mutation-rate
 0
 10
-1.5
-0.1
+0.09
+0.01
 1
 NIL
 HORIZONTAL
@@ -417,7 +417,7 @@ SWITCH
 404
 fitness-function?
 fitness-function?
-0
+1
 1
 -1000
 
@@ -496,7 +496,6 @@ Para el modelo en sí:
 Por favor, cite el software NetLogo como:
 
 * Wilensky, U. (1999). NetLogo. http://ccl.northwestern.edu/netlogo/. Centro de aprendizaje conectado y modelado basado en computadora, Northwestern University, Evanston, IL.
-
 
 @#$#@#$#@
 default
