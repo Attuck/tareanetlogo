@@ -14,7 +14,10 @@ globals [
 to setup
   clear-all
   create-turtles population-size [
-    set bits n-values world-width [one-of [0 1]]
+    set rnd [one-of [true false]
+      ifelse rnd
+      [set bits n-values world-width [one-of [0 0 0 0 0 0 0 0 0 1]]]
+      [set bits n-values world-width [one-of [0 1 1 1 1 1 1 1 1 1]]]
     ifelse fitness-function?
     [calculate-fitness]
     [calculate-fitness-2]
@@ -496,7 +499,6 @@ Para el modelo en sí:
 Por favor, cite el software NetLogo como:
 
 * Wilensky, U. (1999). NetLogo. http://ccl.northwestern.edu/netlogo/. Centro de aprendizaje conectado y modelado basado en computadora, Northwestern University, Evanston, IL.
-
 @#$#@#$#@
 default
 true
