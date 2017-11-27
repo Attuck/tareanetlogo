@@ -14,13 +14,20 @@ globals [
 to setup
   clear-all
   create-turtles population-size [
-    set rnd [one-of [true false]
-      ifelse rnd
-      [set bits n-values world-width [one-of [0 0 0 0 0 0 0 0 0 1]]]
-      [set bits n-values world-width [one-of [0 1 1 1 1 1 1 1 1 1]]]
+    let rnd one-of [true false]
+
+
     ifelse fitness-function?
-    [calculate-fitness]
-    [calculate-fitness-2]
+    [
+      set bits n-values world-width [one-of [0 1]]
+      calculate-fitness
+    ]
+    [
+      ifelse rnd
+      [set bits n-values world-width [one-of [0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1]]]
+      [set bits n-values world-width [one-of [0 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1]]]
+      calculate-fitness-2
+    ]
     hide-turtle  ;; the turtles' locations are not used, so hide them
   ]
   ;;file-delete "log_netlogo.txt"
@@ -333,7 +340,7 @@ mutation-rate
 mutation-rate
 0
 10
-0.09
+0.03
 0.01
 1
 NIL
@@ -377,7 +384,7 @@ crossover-rate
 crossover-rate
 0
 100
-30.0
+60.0
 1
 1
 NIL
